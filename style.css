@@ -1,0 +1,178 @@
+
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Темная/Светлая тема */
+body.light {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+.content-block h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Жирный */
+    text-transform: uppercase; /* Если нужно заглавными буквами */
+    letter-spacing: 1px; /* Небольшое расстояние между буквами для читаемости */
+}
+
+header {
+    background-color: #333366;  /* Темно-синий вместо оранжевого */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-btn, .theme-toggle-btn {
+    background: #34495e;  /* Темно-серый */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #333366;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a:hover {
+    background-color: #333366;
+    color: white;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+.content-block .text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Можно 500, если нужен чуть более жирный */
+    line-height: 1.6; /* Чуть увеличенный межстрочный интервал для читаемости */
+    color: #333; /* Убедись, что цвет текста остается контрастным */
+}
+
+.content-block img {
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-block .text {
+    width: 60%;
+    text-align: left;
+}
+.content-block .text p {
+    line-height: 1.8; /* Увеличенный межстрочный интервал */
+}
+
+
+footer {
+    background: #333366;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Переключение темы */
+body.light .content-block {
+    background-color: #ffffff;
+}
+
+body.dark .content-block {
+    background-color: #444444;  /* Темный фон для блоков в темной теме */
+    color: #ffffff;
+}
+body.light .content-block .text {
+    color: #333; /* Цвет для светлой темы */
+}
+
+body.dark .content-block .text {
+    color: #f4f4f4; /* Цвет для темной темы */
+}
+
+.theme-toggle-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* Анимация появления контента */
+.content-block {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.menu-btn {
+    background-color: #FFFFFF;  /* Здесь можно поставить любой цвет */
+    color: white;  /* Цвет текста на кнопке */
+}
+.menu-btn {
+    color: #292929;  /* Цвет текста кнопки */
+}
+
+.menu-btn:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+}
