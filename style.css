@@ -1,4 +1,3 @@
-
 /* Общие стили */
 body {
     font-family: 'Roboto', sans-serif;
@@ -22,15 +21,16 @@ body.dark {
 h1, h2 {
     font-family: 'Playfair Display', serif;
 }
+
 .content-block h2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700; /* Жирный */
-    text-transform: uppercase; /* Если нужно заглавными буквами */
-    letter-spacing: 1px; /* Небольшое расстояние между буквами для читаемости */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 header {
-    background-color: #333366;  /* Темно-синий вместо оранжевого */
+    background-color: #333366;
     color: white;
     padding: 20px;
     display: flex;
@@ -40,7 +40,7 @@ header {
 }
 
 .menu-btn, .theme-toggle-btn {
-    background: #34495e;  /* Темно-серый */
+    background: #34495e;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -48,6 +48,7 @@ header {
     font-size: 18px;
 }
 
+/* Навигация */
 nav {
     background-color: #333366;
     padding: 10px;
@@ -86,6 +87,7 @@ main {
     margin: auto;
 }
 
+/* Контентные блоки */
 .content-block {
     display: flex;
     align-items: center;
@@ -96,29 +98,51 @@ main {
     margin-bottom: 20px;
     transition: background-color 0.3s ease;
 }
+
 .content-block .text {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400; /* Можно 500, если нужен чуть более жирный */
-    line-height: 1.6; /* Чуть увеличенный межстрочный интервал для читаемости */
-    color: #333; /* Убедись, что цвет текста остается контрастным */
-}
-
-.content-block img {
-    width: 40%;
-    border-radius: 10px;
-    margin-right: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.content-block .text {
-    width: 60%;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
     text-align: left;
-}
-.content-block .text p {
-    line-height: 1.8; /* Увеличенный межстрочный интервал */
+    width: 100%;
 }
 
+/* Изображения */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+.image-container figure {
+    text-align: center;
+    max-width: 400px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Если нет картинки, текст не прижимается к краю */
+.no-image .text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Подвал */
 footer {
     background: #333366;
     color: white;
@@ -132,15 +156,16 @@ body.light .content-block {
 }
 
 body.dark .content-block {
-    background-color: #444444;  /* Темный фон для блоков в темной теме */
+    background-color: #444444;
     color: #ffffff;
 }
+
 body.light .content-block .text {
-    color: #333; /* Цвет для светлой темы */
+    color: #333;
 }
 
 body.dark .content-block .text {
-    color: #f4f4f4; /* Цвет для темной темы */
+    color: #f4f4f4;
 }
 
 .theme-toggle-btn {
@@ -153,7 +178,6 @@ body.dark .content-block .text {
     cursor: pointer;
 }
 
-
 /* Анимация появления контента */
 .content-block {
     opacity: 0;
@@ -165,14 +189,49 @@ body.dark .content-block .text {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Кнопка меню */
 .menu-btn {
-    background-color: #FFFFFF;  /* Здесь можно поставить любой цвет */
-    color: white;  /* Цвет текста на кнопке */
-}
-.menu-btn {
-    color: #292929;  /* Цвет текста кнопки */
+    background-color: #FFFFFF;
+    color: #292929;
 }
 
 .menu-btn:hover {
-    background-color: #45a049;  /* Цвет фона при наведении */
+    background-color: #45a049;
+}
+
+/* Закрытие меню */
+.menu-close {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+.menu.active .menu-close {
+    display: block;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .content-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-block img {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+
+    .content-block .text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-btn {
+        font-size: 16px;
+    }
 }
