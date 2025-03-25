@@ -235,3 +235,10 @@ body.dark .content-block .text {
         font-size: 16px;
     }
 }
+footer a[href*="vk.com"] {
+    color: #4C75A3; /* Цвет VK */
+}
+
+footer a[href*="t.me"] {
+    color: #0088CC; /* Цвет Telegram */
+}
